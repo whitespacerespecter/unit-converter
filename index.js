@@ -10,7 +10,6 @@
 // eventListener on button
 // grab string/value from input field and convert to number of needed
 
-const inputValue = parseFloat(document.getElementById("input-field").value)
 const convertBtn = document.getElementById("convert-btn")
 const clearBtn = document.getElementById("clear-btn")
 const nightBtn = document.getElementById("night-btn")
@@ -22,8 +21,6 @@ let massEl = document.getElementById("mass")
 console.log(lenghtEl)
 console.log(volumeEl)
 console.log(massEl)
-console.log(inputValue)
-console.log(typeof inputValue)
 console.log(convertBtn)
 
 let meters = 0;
@@ -49,7 +46,7 @@ nightBtn.addEventListener("click", function(){
     classesToToggle.forEach(classToggle => {
         
         let elements = document.querySelectorAll(classToggle)
-    
+        
         elements.forEach(element => {
             element.classList.toggle('dark')
         });    
@@ -61,10 +58,12 @@ convertBtn.addEventListener("click", function(){
     // generate outputs
     console.log("button clicked!")
     
+    let inputValue = parseFloat(document.getElementById("input-field").value)
+    
     lenghtEl.textContent = `
-        ${inputValue} meters = ${Math.floor(inputValue*meterToFeet*1000)/1000} feet |
-        ${inputValue} feet = ${Math.floor(inputValue/meterToFeet*1000)/1000} meters
-        
+    ${inputValue} meters = ${Math.floor(inputValue*meterToFeet*1000)/1000} feet |
+    ${inputValue} feet = ${Math.floor(inputValue/meterToFeet*1000)/1000} meters
+    
     `
     
     volumeEl.textContent = `
